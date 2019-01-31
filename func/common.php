@@ -8,6 +8,10 @@ function get($method,$get)
 	else if ($method == "POST")
 	{
 		return isset($_POST[$get]) ? $_POST[$get] : "" ;
+    }
+    else if ($method == "COOKIE")
+	{
+		return isset($_COOKIE[$get]) ? $_COOKIE[$get] : "" ;
 	}
 	else
 	{

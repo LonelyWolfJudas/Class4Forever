@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <?php
 require_once "../../func/common.php";
-require "../check.php";
-$db = new mysqli("localhost","C4F","Class4Forever","C4f_CTRL");
+$db = new mysqli("localhost","C4F","Class4Forever","C4F_CTRL");
 $key = get("COOKIE","C4F_CTRL_KEY");
+$ip = $_SERVER["REMOTE_ADDR"];
+$ips = $db->query("SELECT IP FROM black_ip");
 if ($key != "")
 {
-	header("location:http://".$_SERVER["HTTP_HOST"]."/.control/index.php");
+	header("location:http://".$_SERVER["HTTP_HOST"]."/.control/index.html");
 }
 else
 {
-	if ($key != "~!@#$%^&*()_+|C4FCTRL|+_)(*&^%$#@!~")
+	if ($key != "qazwsxedcrfvtgbyhnujmik,ol.p;/")
 	{
 		while ($result = $ips->fetch_assoc())
 		{
@@ -27,3 +28,9 @@ else
 
 }
 ?>
+<head>
+    <title>CONSOLE</title>
+</head>
+<body>
+<h1>success</h1>
+</body>

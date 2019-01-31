@@ -1,8 +1,8 @@
 <?php
-require_once "../func/commond.php";
+require_once "../func/common.php";
 $pwd = get("POST","pwd");
 $ok = get("POST","ok");
-$db = new mysqli("localhost","C4F","Class4Forever","C4f_CTRL");
+$db = new mysqli("localhost","C4F","Class4Forever","C4F_CTRL");
 $ip = $_SERVER["REMOTE_ADDR"];
 $ips = $db->query("SELECT IP FROM black_ip");
 while ($result = $ips->fetch_assoc())
@@ -22,7 +22,7 @@ else
 {
 	$pwd = $ok = NULL;
 	$db->query("INSERT INTO history (IP,TIME) VALUES('{$ip}',NOW())");
-	setcookie("C4F_CTRL_KEY","~!@#$%^&*()_+|C4FCTRL|+_)(*&^%$#@!~",time()+60 * 30);
+	setcookie("C4F_CTRL_KEY","qazwsxedcrfvtgbyhnujmik,ol.p;/",time()+60 * 30);
 	header("location:http://".$_SERVER["HTTP_HOST"]."/.control/.ctrl/ctrl.php");
 }
 ?>
