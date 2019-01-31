@@ -1,14 +1,49 @@
 #ALL OF THESE JUST FOUR YOU GUYS :)
 
-Now this project is still continue.
+1. Environment:
+	Database:
+	|---------
+	|	CREATE DATABASE Class4Forever;
+	|---------
+	|	CREATE TABLE Class4Forever.default_names
+	|	(
+	|	 ID INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	|	 NAME VARCHAR(255),
+	|	 LOGGED TIMESTAMP NULL
+	|	);
+	|---------
+	|	CREATE TABLE SOVE
+	|	(
+	|	 ID INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	|	 NAME VARCHAR(255) NOT NULL,
+	|	 BORN DATE NOT NULL,
+	|	 SEX VARCHAR(255) NOT NULL,
+	|	 COLOR VARCHAR(255),
+	|	 SONG VARCHAR(255),
+	|	 FAVORITE TEXT,
+	|	 QQ VARCHAR(255) NOT NULL,
+	|	 TEL VARCHAR(255),
+	|	 Email VARCHAR(255),
+	|	 WISH TEXT,
+	|	 ME TEXT NOT NULL,
+	|	 AT TIMESTAMP NOT NULL
+	|	);
+	|---------
+	|	CREATE DATABASE C4F_CTRL;
+	|---------
+	|	CREATE TABLE history 
+	|	(
+	|	 ID INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	|	 IP VARCHAR(255) NOT NULL ,
+	|	 TIME TIMESTAMP NOT NULL 
+	|	);
+	|----------	
+	|	CREATE TABLE black_ip 
+	|	(
+	|	 ID INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+	|	 IP VARCHAR(255) NOT NULL,
+	|	 TIMES INT NOT NULL,
+	|	 FIRST_TIME TIMESTAMP NULL,
+	|	 LAST_TIME TIMESTAMP NULL 
+	|	);
 
-Now Work :
-	1. Add host control model
-	2. Add online list
-		|
-		|
-		|`-- php -<-<-<-<-<-<+
-		|     |		     	 |
-		|     |send	    	 |show
-		|     |			     |
-		`--  Database ->->->-+
