@@ -11,5 +11,8 @@
 4.在浏览器中访问**http://localhost/**       
 ***     
 # 远程控制页面:**http://localhost/.control/index.html**     
-# 密码为C4FCTRL,单选框选第三个      
-![校徽](https://github.com/LonelyWolfJudas/Class4Forever/blob/master/image/shortcut.jpg)
+# 密码为C4FCTRL,单选框选第三个     
+***
+校徽        
+![校徽](https://github.com/LonelyWolfJudas/Class4Forever/blob/master/image/shortcut.jpg)        
+***
