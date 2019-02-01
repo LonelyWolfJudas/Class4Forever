@@ -12,4 +12,4 @@
 ***     
 # 远程控制页面:**http://localhost/.control/index.html**     
 # 密码为C4FCTRL,单选框选第三个      
-![校徽]http://github.com/lonelywolfjudas/class4forever/image/shortcut.jpg)
+![校徽](http://github.com/lonelywolfjudas/class4forever/image/shortcut.jpg)
