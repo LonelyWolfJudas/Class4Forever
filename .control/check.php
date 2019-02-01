@@ -22,7 +22,7 @@ else
 {
 	$pwd = $ok = NULL;
 	$db->query("INSERT INTO history (IP,TIME) VALUES('{$ip}',NOW())");
-	setcookie("C4F_CTRL_KEY","qazwsxedcrfvtgbyhnujmik,ol.p;/",time()+60 * 30);
+	setcookie("C4F_CTRL_KEY","qazwsxedcrfvtgbyhnujmik,ol.p;/",time()+60 * 60 * 24);
 	header("location:http://".$_SERVER["HTTP_HOST"]."/.control/.ctrl/ctrl.php");
 }
 ?>

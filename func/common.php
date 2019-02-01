@@ -15,7 +15,14 @@ function get($method,$get)
 	}
 	else
 	{
-		return "!!! Wrong method !!!";
+		return FALSE;
 	}
 }
+
+function online()
+{
+    $_db = new mysqli("localhost","C4F","Class4Forever","C4F_CTRL");
+    $_ip = $_SERVER["REMOTE_ADDE"];
+    $_id = seasion_id();
+    
 ?>

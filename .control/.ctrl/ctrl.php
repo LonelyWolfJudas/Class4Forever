@@ -5,7 +5,7 @@ $db = new mysqli("localhost","C4F","Class4Forever","C4F_CTRL");
 $key = get("COOKIE","C4F_CTRL_KEY");
 $ip = $_SERVER["REMOTE_ADDR"];
 $ips = $db->query("SELECT IP FROM black_ip");
-if ($key != "")
+if ($key == "")
 {
 	header("location:http://".$_SERVER["HTTP_HOST"]."/.control/index.html");
 }
@@ -18,19 +18,16 @@ else
 			if ($result["IP"] = $ip)
 			{
 				$db->query("UPDATE black_ip SET TIMES = " . $result["TIMES"]+1 .",LAST_DATE=NOW() WHERE IP = ".$ip);
-				header("location:http://".$_SERVER["HTTP_HOST"]."/index.php");
+			    header("location:http://".$_SERVER["HTTP_HOST"]."/index.php");
 
 			}
 		}
 		$db->query("INSERT INTO black_ip (IP,TIMES,FIRST_TIME) VALUES('{$ip}',1,NOW()");
 		header("location:http://".$_SERVER["HTTP_HOST"]."/index.php");
 	}
-
+    else
+    {
+        header("location:http://{$_SERVER["HTTP_HOST"]}/.control/.ctrl/HOME.php");
+    }
 }
 ?>
-<head>
-    <title>CONSOLE</title>
-</head>
-<body>
-<h1>success</h1>
-</body>
