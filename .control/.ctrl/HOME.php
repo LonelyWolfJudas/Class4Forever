@@ -17,7 +17,7 @@ require "../../func/common.php";
         </tr>
     </table>
     <div class="online">
-        当前在线人数: <?php echo get_online("int");$members=array();$members=get_online('array');?>
+        当前在线人数: <?php echo get_online("int");?>
         <table>
             <tr>
                 <td>ID</td>
@@ -25,10 +25,11 @@ require "../../func/common.php";
                 <td>最后一次操作</td>
             </tr>
 <?php
+    $members = get_online("array");
     $shown = 0;
     while ($shown <= count($members))
     {
-        $shown += 1;
+        $show++;
         echo <<<table
             </tr>
                 <td>{$members[$shown]["ID"]}</td>

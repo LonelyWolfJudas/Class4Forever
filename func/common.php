@@ -36,8 +36,7 @@ function online()
     $_time = time();
     if ($ON == TRUE)
     {
-        $_db->query("UPDATE online SET LAST = {$_time} WHERE ID = '{$_id}'");
-        echo $_db->errno() . $_db->error();
+        $_db->query("UPDATE online SET LAST = {$_time} , LAST_ACTION = NOW() WHERE ID = '{$_id}'");
     }
     else
     {
@@ -59,14 +58,14 @@ function get_online($type)
     $_members = array();
     while ($_value = $_result->fetch_assoc())
     {
-        $_member += 1;
+        $_member++;
         $_members[$_member] = array("ID" => $_value["ID"] , "IP" => $_value["IP"] , "Last_action" => $_value["LAST_ACTION"]);
     }
     if ($_type="int")
     {
         return $_member;
     }
-    else
+    else if($_type="array");
     {
         return $_members;
     }
