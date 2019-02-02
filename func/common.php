@@ -33,7 +33,7 @@ function online()
             $ON = TRUE;
         }
     }
-    $_time = time();
+    $_time = time() + 300;
     if ($ON == TRUE)
     {
         $_db->query("UPDATE online SET LAST = {$_time} , LAST_ACTION = NOW() WHERE ID = '{$_id}'");
@@ -43,31 +43,38 @@ function online()
         $_db->query("INSERT INTO online (ID , IP , LAST ,LAST_ACTION) VALUES('{$_id}' , '{$_ip}' , {$_time} , NOW())");
             
     }
-    $_db->query("DELETE FROM online WHERE LAST < {$_time+300}");
+    $_db->query("DELETE FROM online WHERE LAST < {$_time}");
  
 
 }
-function get_online($type)
+
+class get_online
 {
-    $_db = new mysqli("localhost","C4F","Class4Forever","C4F_CTRL");
-    $_id = session_id();
-    $_ip = $_SERVER["REMOTE_ADDR"];
-    online();
-    $_result = $_db->query("SELECT * FROM online");
-    $_member = 0;
-    $_members = array();
-    while ($_value = $_result->fetch_assoc())
+    function number()
     {
-        $_member++;
-        $_members[$_member] = array("ID" => $_value["ID"] , "IP" => $_value["IP"] , "Last_action" => $_value["LAST_ACTION"]);
+        online();
+        $db = new mysqli("localhost","C4F","Class4Forever","C4F_CTRL");
+        $result = $db->query("SELECT * FROM online");
+        $num = 0;
+        while ($value = $result->fetch_assoc())
+        {
+            $num++;
+        }
+        return $num;
     }
-    if ($_type="int")
+    function desc()
     {
-        return $_member;
-    }
-    else if($_type="array");
-    {
-        return $_members;
+        online();
+        $db = new mysqli("localhost","C4F","Class4Forever","C4F_CTRL");
+        $result = $db->query("SELECT * FROM online");
+        $desc = array();
+        $num = 0;
+        while ($value = $result->fetch_assoc())
+        {
+            $num++;
+            $desc[$num] = array("id" => $value["ID"] , "ip" => $value["IP"] , "last" => $value["LAST"] , "last_action" => $value["LAST_ACTION"]);
+        }
+        return $desc;
     }
 }
 ?>
