@@ -5,4 +5,14 @@
 }
 .map td {
   width:50%;
+  text-align:center;
+}
+.map a {
+  text-decoration:none;
+  text-align:center;
+}
+.online table {
+  top:20%;
+  left:50%;
+  text-align:center;
 }

@@ -11,14 +11,9 @@ $online = new get_online();
 </head>
 <!-- =========BODY========= -->
 <body>
-    <table class="map" border="1">
-        <tr>
-            <td><a href="HOME.php">|HOME|</a></td>
-            <td><a href="DB.php">|Database|</a></td>
-        </tr>
+<?php echomap(); ?>
     <hr />
     <hr />
-    </table>
     <div class="online">
         <table border="1">
             <caption>当前在线人数: <?php echo $online->number(); ?></caption>
