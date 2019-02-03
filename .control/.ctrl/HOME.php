@@ -12,8 +12,6 @@ $online = new get_online();
 <!-- =========BODY========= -->
 <body>
 <?php map(); ?>
-    <hr />
-    <hr />
     <div class="online">
         <table border="1">
             <caption>当前在线人数: <?php echo $online->number(); ?></caption>

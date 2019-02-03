@@ -5,7 +5,7 @@ $db = new mysqli("localhost","C4F","Class4Forever",$dbname);
 ?>
 <!DOCTYPE html>
 <head>
-    <link re="stylesheet" href="../style.css" type="text/css" />
+    <link rel="stylesheet" href="../style.css" type="text/css" />
     <meta charset="UTF-8" />
     <title>ConTRoL | Database | Table | <?php echo $dbname; ?></title>
 </head>
