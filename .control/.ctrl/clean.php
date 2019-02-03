@@ -13,13 +13,13 @@ function cleanup()
         header("location:http://{$_SERVER["HTTP_HOST"]}/index.php");
     }
 }
-function echomap()
+function map()
 {
     echo <<<map
-    <table class="map" border="1">
+    <table class="map" border="1" style="top:0pt;left:0pt;width:100%;" class="map">
         <tr>
-            <td><a href="HOME.php">|HOME|</a></td>
-            <td><a href="DB.php">|Database|</a></td>
+            <td style="width=50%;"><a style="text-decoration:none;" href="http://{$_SERVER["HTTP_HOST"]}/.control/.ctrl/HOME.php">|HOME|</a></td>
+            <td style="width=50%;"><a style="text-decoration:none;" href="http://{$_SERVER["HTTP_HOST"]}/.control/.ctrl/DB.php">|Database|</a></td>
         </tr>
     </table>
 

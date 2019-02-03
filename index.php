@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <?php
+require "func/common.php";
+online();
 $db =  @new mysqli("localhost","C4F","Class4Forever","Class4Forever");
 if($db->connect_error)
 {
@@ -23,7 +25,7 @@ if($db->connect_error)
 			<fieldset>
 				<legend>请输入您的名字</legend>
 <?php
-$name = isset($_REQUEST['name']) ? $_REQUEST['name'] : '' ;
+$name = get("POST","name");
 if ($name=='')
 {
 	echo <<<main

@@ -1,5 +1,6 @@
 <?php
-	require_once "../../func/common.php";
+    require_once "../../func/common.php";
+    online();
 	$name = get("POST","name");
 	$sex = get("POST","sex");
 	$year = get("POST","year");

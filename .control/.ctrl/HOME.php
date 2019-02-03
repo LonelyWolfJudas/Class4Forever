@@ -11,7 +11,7 @@ $online = new get_online();
 </head>
 <!-- =========BODY========= -->
 <body>
-<?php echomap(); ?>
+<?php map(); ?>
     <hr />
     <hr />
     <div class="online">

@@ -1,3 +1,7 @@
+<?php
+require "../func/common.php";
+online;
+?>
 <!DOCTYPE html>
 <head>
 	<meta charset="UTF-8" />
