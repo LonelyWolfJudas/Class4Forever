@@ -6,9 +6,10 @@
 1.安装环境:     
 `sudo apt-get install mysql-server,php,git,apache2`     
 2.克隆库:       
-`cd /var/www/html`      
-`rm * -rf`      
-`git clone http://github.com/LonelyWolfJudaas/Class4Forever.git ./`     
+`rm -rf /var/www/html/*`        
+`git clone http://github.com/lonelywolfjudas/class4forever.git ./c4f`       
+`cd c4f`
+`bash copy.sh`      
 3.配置mysql环境     
 4.在浏览器中访问 http://localhost/       
 ***     

@@ -13,6 +13,11 @@ $db = new mysqli("localhost","C4F","Class4Forever",$dbname);
 <body>
 <a href="table.php?<?php echo $dbname; ?>">&larr;后退</a>
 <?php
+    echo <<<table
+<a href="tbsetting.php?dbname={$dbname}&tbname={$tbname}">操作该表</a>
+table;
+?>
+<?php
 map();
 $result = $db->query("DESC {$tbname}");
 echo <<<table
@@ -25,6 +30,7 @@ echo <<<table
             <th>Key</th>
             <th>默认</th>
             <th>Extra</th>
+            <th></th>
         </tr>
 
 table;
@@ -44,6 +50,7 @@ while ($value = $result->fetch_assoc())
             <td>{$key}</td>
             <td>{$default}</td>
             <td>{$extra}</td>
+            <td><a href="desc_field.php?dbname={$dbname}&tbname={$tbname}&field={$field}">DESC</a></td>
         </tr>
 
 table;
