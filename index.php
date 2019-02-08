@@ -65,7 +65,7 @@ WHERE NAME = '{$name}'
 query;
 						$db->query($query);
 					}
-					setcookie("user_name",$name,time()+60*60*24*30*6);
+					setcookie("user_name",$name,time()+60*60*24*10);
 					header("location:http://".$_SERVER["HTTP_HOST"] . "/home.php?user_name=" . $name);
 					continue;
 				}
