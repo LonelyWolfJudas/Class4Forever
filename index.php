@@ -12,9 +12,8 @@ if($db->connect_error)
 }
 ?>
 <html>
-        <head>
-                <meta charset="UTF-8" />
-                <base href="" />
+		<head>
+				<meta charset="UTF-8" />
                 <link rel="shortcut icon" href="./image/shortcut.jpg" />
                 <title>Class 4 Forever 永远4班</title>
                 <link href="./style/css.css" type="text/stylesheet"  rel="stylesheet" />
