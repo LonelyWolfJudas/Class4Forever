@@ -71,7 +71,7 @@ header("content-type:text/html;charset=utf-8");        //设置编码
         move_uploaded_file($_FILES["file"]["tmp_name"],"../faces/".$_FILES["file"]["name"]);
 
         /*插入数据库*/
-        $db = new mysqli('sql213.ccaeo.com','cca_23621603','123456789','cca_23621603_c4f');
+        $db = new mysqli('数据库服务器','数据库用户名','数据库用户密码','你的数据库');
         $query = <<<mysql
 INSERT INTO SOVE                                           
 (NAME,
@@ -115,7 +115,7 @@ mysql;
             </div>
             <div class="panel-body">
                 请联系网站管理员:<br/>
-                <a href="mailto:hacker_orange@outlook.com" title="邮箱联系我">
+                <a href="mailto:邮箱" title="邮箱联系我">
                     Hacker_Orange@outlook.com
                 </a><br/>
                 详情:<br/>{$db->errno}
