@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>My Qnurye`s Classmates-website</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">  
+    	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+        <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link rel="icon" href="../image/icon.jpg" type="image/jpg" />
+        <script>
+            function deal(id,val) {
+                document.getElementById(id).innerHTML=val;
+            }
+            window.setInterval(function(){
+            var ajax = new XMLHttpRequest();
+            ajax.onreadystatechange = function() {
+                if (ajax.readyState==4 && ajax.status==200) {
+                    eval('var data='+ajax.responseText);
+                    deal('day',data.day);
+                    deal('hour',data.hour);
+                    deal('min',data.min);
+                    deal('sec',data.sec);
+                    deal('total_day',data.day);
+                    deal('total_hour',data.total_hour);
+                    deal('total_min',data.total_min);
+                    deal('total_sec',data.total_sec);
+                }
+            }
+            ajax.open('GET','return.php?random='+Math.random(),'true');
+            ajax.send();
+            },1000);
+        </script>
+    </head>
+    <body>
+<!-- 导航栏开始 -->  
+        <nav class="navbar navbar-inverse" role="navigation">
+            <div class="container-fluid"> 
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse"
+                        data-target="#navbar-collapse">
+                        <span class="sr-only">导航</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="../index.html">C4F</a>
+                </div>
+                <div class="collapse navbar-collapse" id="navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="../index.html" title="返回主页">
+                                <span class="glyphicon glyphicon-home"></span>
+                                主页
+                        </a></li>
+                        <li class="active"><a href="#" title="中考倒计时">
+                            <span class="glyphicon glyphicon-time"></span>
+                            中考倒计时
+                        </a></li>
+                        <li><a href="../write/index.php" title="给我写一篇同学录吧!">
+                            <span class="glyphicon glyphicon-pencil"></span>
+                            写一篇同学录
+                        </a></li>
+                        <li><a href="../about.html" title="关于本站">
+                            <span class="glyphicon glyphicon-bell"></span>
+                            关于本站
+                        </a></li>
+                        <li><a href="../pay.html" title="给我捐赠">
+                            <span class="glyphicon glyphicon-qrcode"></span>
+                            捐赠
+                        </a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+<!-- 导航栏结束 -->
+		<div style="height:30px;"></div>
+		<div class="main_zone">
+			<h2 class="text-center text-danger">
+                <span class="text-muted">距离高考还剩</span>
+                <br />
+                <span class="text-warning" id="day"></span> 天 <span class="text-warning" id="hour"></span> 小时 <span class="text-warning" id="min"></span> 分钟 <span class="text-warning" id="sec"></span> 秒
+			</h2>
+			<hr /><hr />
+			<div class="text-muted text-center">
+				<p>假如，你的初中生活还剩下 <span class="text-warning" id="total_day"></span> 天</p>
+				<p>假如，你的初中生活还剩下 <span class="text-warning" id="total_hour"></span> 小时</p>
+				<p>假如，你的初中生活还剩下 <span class="text-warning" id="total_min"></span> 分钟</p>
+				<p>假如，你的初中生活还剩下 <span class="text-warning" id="total_sec"></span> 秒</p>
+				<h3 class="text-warning">我是说，可能没有假如</h3>
+			</div>
+		</div>
+		<hr /><hr />
+		<p class="text-muted text-center"><small>
+            &copy; 2019 <a href="#" title="Qnurye's Classmates-website">Qnurye</a> . All rights ignored .
+        </small></p>
+        <div style="height:1000px;"></div>
+	</body>
+</html>
